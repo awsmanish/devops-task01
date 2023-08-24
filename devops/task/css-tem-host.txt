@@ -1,0 +1,36 @@
+FROM centos:7
+RUN yum update -y && yum install unzip -y
+RUN yum install httpd -y
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page293/photosec.zip .
+RUN mkdir /opt/tem
+RUN unzip photosec.zip -d /opt/tem
+RUN mv /opt/tem/*/* /var/www/html/
+EXPOSE 80/tcp
+CMD [ "httpd" , "-D" , "FOREGROUND"]
+
+
+docker build -t http-cs:v3 .
+$docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+http-cs      v3        8fe64b2b4bd2   16 seconds ago   807MB
+
+$ docker run -d -P --name tem http-cs:v3
+f53df2c721e415d2f87509ceefa4ec95137b4d26c726f0300f72b73fa0867a89
+
+$ docker ps 
+CONTAINER ID   IMAGE          COMMAND                 CREATED         STATUS         PORTS                                     NAMES
+f53df2c721e4   http-cs:v3     "httpd -D FOREGROUND"   9 seconds ago   Up 8 seconds   0.0.0.0:49154->80/tcp, :::49154->80/tcp   tem
+
+
+$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+http-cs      v3        8fe64b2b4bd2   8 minutes ago    807MB
+
+docker build -t awsstudentt/tem-host(docker hub repo name):v3 .
+
+
+docker login -u awsstudentt(docker name)
+Password:
+
+
+$ docker push awsstudentt/tem-host:v3-----------------> docker file m aa jyagi image

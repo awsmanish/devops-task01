@@ -1,0 +1,38 @@
+FROM ubuntu
+RUN apt update -y && apt install git -y
+RUN git clone https://github.com/shashirajraja/onlinebookstore.git
+RUN apt install maven -y
+RUN cd onlinebookstore/ && mvn clean package
+RUN apt install wget -y
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+RUN tar -xvf apache-tomcat-9.0.78.tar.gz -C /opt/
+RUN cd onlinebookstore/target/ && mv onlinebookstore.war /opt/apache-tomcat-9.0.78/webapps/
+RUN cd /opt/apache-tomcat-9.0.78
+EXPOSE 8080/tcp
+CMD ./opt/apache-tomcat-9.0.78/bin/startup.sh; sleep inf
+
+
+
+
+
+
+$docker build -t tomcat:maven1 .
+REPOSITORY             TAG       IMAGE ID       CREATED              SIZE
+ap-tom                 maven     9d1273849592   About a minute ago   551MB
+
+
+$ docker run -d -P --name tomcat ap-tom:maven
+d72251c481ea51ee01c3bdd84d8abb62da4c79e1b588552793b3da3d87e80aeb
+
+
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+d72251c481ea   ap-tom:maven   "/bin/sh -c './opt/a…"   14 seconds ago   Up 13 seconds   0.0.0.0:49153->8080/tcp, :::49153->8080/tcp   tomcat
+
+
+
+$ docker build -t awsstudentt/tem-host:maven .
+
+
+
+$ docker push awsstudentt/tem-host:maven

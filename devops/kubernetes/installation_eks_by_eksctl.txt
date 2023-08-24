@@ -1,0 +1,39 @@
+#### for access the cluster 
+create instance or run command in your local machine (wsl)
+
+1) install awscli in instance 
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+2) used credentials of root users if you create cluster using root user
+access key and secret access key
+
+
+3) Install kubectl 
+ check using this command 
+ kubectl version --short --client
+  
+  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
+  chmod +x ./kubectl
+  mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+  kubectl version --short --client
+ 
+
+4) Install aws_iam_authenticator 
+  curl -Lo aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.5.9/aws-iam-authenticator_0.5.9_linux_amd64
+  chmod +x ./aws-iam-authenticator
+  mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
+  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+  aws-iam-authenticator help
+
+5) install eksctl command 
+  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+  sudo mv /tmp/eksctl /usr/local/bin
+  eksctl version
+  eksctl --help
+
+6) create cluster using eksctl 
+   eksctl create cluster --name <cluster-name> --node-type t2.medium --nodes 2 --nodes-min 1 --nodes-max 3 --region <region name>

@@ -1,0 +1,144 @@
+Content 
+1. Software development 
+2. Software development lifecycle 
+
+Software development lifecycle 
+
+The software development lifecycle (SDLC) refers to the step-by-step process followed to develop high-quality software. It encompasses all the activities and phases involved in designing, building, testing, deploying, and maintaining software systems. The SDLC provides a structured framework for software development teams to plan, execute, and control the development process.
+
+The typical phases of the software development lifecycle are as follows:
+
+Requirements Gathering: In this phase, the project requirements are identified, analyzed, and documented. It involves understanding the needs of the stakeholders and defining the software's functional and non-functional requirements.
+
+Design: In the design phase, the software architecture and system specifications are created. This includes creating detailed designs for various components, modules, interfaces, and databases.
+
+Implementation: In this phase, the actual coding or programming of the software takes place. Developers write the code according to the design specifications, and the software is built.
+
+Testing: The software undergoes testing to identify and fix any defects or issues. This includes unit testing, integration testing, system testing, and user acceptance testing to ensure the software meets the desired quality and functionality.
+
+Deployment: Once the software has been thoroughly tested and validated, it is deployed to the production environment. This involves installing and configuring the software on the target systems.
+
+Maintenance: After deployment, the software enters the maintenance phase, where updates, bug fixes, and enhancements are made as required. This phase ensures the software remains functional and up-to-date throughout its lifecycle.
+
+The SDLC provides a structured approach to software development, guiding the team through each phase to deliver a reliable and high-quality software product. Different development methodologies, such as waterfall, agile, or iterative approaches, may be followed within the software development lifecycle, depending on the specific project requirements and team preferences.
+
+
+Waterfall model 
+
+The waterfall Model was the first Process Model to be introduced .It is also referred to as a linear-sequential life cycle model . It is very simple to understand and use. In a waterfall model ,
+each phase must be competed before the next phase can begiin and there is no overlapping in the phases .
+
+The Waterfall Model is the earlist SDLC approach that was used for the software development.
+
+The Waterfall Model illustrate the software development process in a linear sequential flow.
+This means that any phase in the development process begins only if the previous phase is complete.
+In this waterfall model, the phases do not overlap.
+ 
+It operate on UPDODWN phase
+
+Phases of waterfall model
+    1.Fisibility study 
+    2.Requirement analysis
+    3.Design 
+    4.Coding and unit testing
+    5.System testing and integration 
+    6.maintainance 
+
+Fisibilithy study
+    A feasibility study in the waterfall model is a process of evaluating whether a software project is technically possible, economically viable, and can be completed within the desired timeframe. It involves assessing factors like technology, resources, costs, legal requirements, and operational considerations to determine if the project is practical and achievable before proceeding with development.
+    project is fisible or not
+    fisible includes (you do or not ,budget , project big or not, team)
+    time duration 
+
+Requirement analysis and specification
+   srs( Software Requirement Specification) document create
+   requirement analysis (tools)
+   The aim of this phase is to understand the exact requirements of the customer and to document them properly. Both the customer and the software developer work together so as to document all the functions, performance, and interfacing requirement of the software. It describes the "what" of the system to be produced and not "how."In this phase, a large document called Software Requirement Specification (SRS) document is created which contained a detailed description of what the system will do in the common language.
+
+Design
+    This phase aims to transform the requirements gathered in the SRS into a suitable form which permits further coding in a programming language. It defines the overall software architecture together with high level and detailed design. All this work is documented as a Software Design Document (SDD).
+    Architecture Design
+    traffic flow and everything
+
+Coding and unit testing
+    During this phase, design is implemented. If the SDD is complete, the implementation or coding phase proceeds smoothly, because all the information needed by software developers is contained in the SDD.
+    During testing, the code is thoroughly examined and modified. Small modules are tested in isolation initially. After that these modules are tested by writing some overhead code to check the interaction between these modules and the flow of intermediate output.
+    code 
+    Unit testing (each unit test)
+   
+System testing and integration  
+    This phase is highly crucial as the quality of the end product is determined by the effectiveness of the testing carried out. The better output will lead to satisfied customers, lower maintenance costs, and accurate results. Unit testing determines the efficiency of individual modules. However, in this phase, the modules are tested for their interactions with each other and with the system.
+    combine all the module and test is called as systemn testing
+    after integration there is alpha testing and beta testing 
+    alpha testing ----> developer
+    beta ----> customer testing
+
+Maintenance
+    Maintenance is the task performed by every user once the software has been delivered to the customer, installed, and operational.
+    maintenance is very important
+    If any bug error comes than need to fix it 
+
+
+Advantages: 
+    1.Basic Model (the model which are coming for them it act as a base model)
+    2.simple and easy
+    3.it is good for small project
+
+Disadvantage
+    1. No feedback (it flow team by team no feedback, it runs phase by phase)
+    2. No experiment
+    3. No parappellism (at a time multiple team can not work, they should work one by one )
+    4. High risk (because of no flexibility)
+    5. All feedback is gathered on maintenance stage.
+     
+
+Agile Model
+    The software is broken down into small small interactions
+    Each iterations having the duration of 2 weeks to 8 weeks
+    Iteration 1
+        Plan
+        Design
+        Develop 
+        Test
+        Deploy
+        Review
+        Launch
+
+    Gather the bugs and feedback from the clients and QA team overcome them in the second iterations
+    Iteration 2 
+        Plan
+        Design
+        Develop 
+        Test
+        Deploy
+        Review
+        Launch
+
+Agile is more about software development and devops is more about automation , continous delivery , continuous monitoring.Both can co-exist. Agile vs Devops is more like comparing apples to oranges.
+
+ Agile - Development methodology or framework &
+ DevOps - A process which enables the developed code to get into Env (dev,qa,prod) via CI/CD automation.
+Hence I would say Devops can be one of the integral part of Agile application development,
+If the agile team embraces automation testing instead of manual testing, automated deployment instead of manual deployments, automated monitoring instead of manual monitoring
+
+
+To overcome this problem 
+
+What is DevOps ?
+
+The DevOps is a combination of two words , one is software Development, and second one is operations.
+This allows a single team to handle the entire application lifecycle , from development  to testing, deployment, developers, quality assurance (QA) engineers, and system administrators.
+
+ 
+Devops diagram link -----> https://miro.medium.com/v2/resize:fit:1076/1*57__j14aNQfmPZyFoS1yRg.png
+
+DevOps promotes collaboration between Development and Operations team to deploy code to production faster in an automated and Repeatable way.
+
+DevOps helps to increase organization speed to deliver applications and services. It also allows organizatios to serve their customers better and complete more strongly in the market.
+
+DevOps can also be defined as a sequence of development and IT operations with better communication and collaboration. 
+
+It allows us the continous integration
+It allows us the continuous delivery 
+It allows us the continuous deployment
+It allows us the continuous monitoring 

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: rs-new 
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fm-new
+    matchExpression:
+      {key: env , Operator: In , value: [dev ]}
+  template: 
+    metadata: 
+      name: fm-new
+      labels:
+        app: fm-new
+        env: dev
+        tier: front-end
+    spec: 
+      containers:
+      - name: fleetman-v0-5
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+        ports:
+        - containerPort: 80

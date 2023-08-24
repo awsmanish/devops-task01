@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: repcon 
+spec: 
+  replicas: 3
+  selector:
+    app: fleetman
+  template: 
+    metadata: 
+      name: fleetman-new
+      labels:
+        app: fleetman
+    spec: 
+      containers:
+      - name: fleetman-app
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0
+        ports:
+        - containerPort: 80

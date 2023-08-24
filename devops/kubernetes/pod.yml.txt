@@ -1,0 +1,17 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  namespace: dev
+  name: server-1
+  labels: 
+    app: web
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+  - name: logging-proxy
+    image: tomcat
+    ports:
+    - containerPort: 8080

@@ -1,0 +1,182 @@
+    1  ld
+    2  ls
+    3  sudo apt install kubectl
+    4  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    5  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    6  ls
+    7  minikube start --driver=virtualbox
+    8  sudo apt install curl wgetk
+    9  apt update 
+   10  sudo apt update
+   11  sudo apt install curl wget
+   12  sudo apt install virtualbox
+   13  sudo apt install kubectl
+   14  snap install kubectl
+   15  sudo snap install kubectl
+   16  sudo apt install kubectl
+   17  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   18  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   19  minikube start --driver=virtualbox
+   20  minikube status
+   21  curl localhost
+   22  kubectl get pods -A
+   23  sudo install -o root -g root -m 0755 minikube-linux-amd64 
+   24  sudo install -o root -g root -m 0755
+   25  sudo kubectl version --client
+   26  kubectl 
+   27  sudo snap install kubectl
+   28  curl -O https://docs.docker.com/engine/install/linux-l/
+   29  sudo apt update
+   30  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   31  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   32  sudo apt install docker.io
+   33  docker --version
+   34  docker images
+   35  sudo usermod -aG docker ubuntu 
+   36  docker images
+   37  sudo systemctl status
+   38  sudo systemctl status docker
+   39  sudo usermod -aG docker ubuntu 
+   40  cat /etc/group
+   41  tail  /etc/group
+   42  docker images
+   43  sudo systemctl start docker
+   44  sudo systemctl enable docker
+   45  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   46  minikube status
+   47  minikube start
+   48  sudo usermod -aG docker $USER && newgrp docker
+   49   curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+   50  curl -LO https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256
+   51  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   52  ls
+   53  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   54  ls
+   55  minikube start
+   56  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   57  sudo kubectl version --client
+   58  kubectl version --client
+   59  kubectl version --client --output=yaml
+   60  sudo apt-get install -y kubectl
+   61  sudo apt-get update
+   62  sudo apt-get install -y ca-certificates curl
+   63  docker version
+   64  sudo systemctl status docker
+   65  sudo systemctl enable docker
+   66  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   67  sudo usermod -aG docker ubuntu
+   68  exit
+   69  minikube start
+   70  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   71  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   72  sudo kubectl version --client
+   73  kubectl version --client --output=yaml
+   74  kubectl
+   75  kubectl run nginx --image=nginx
+   76  kubectl run nginx --images=nginx
+   77  kubectl run nginx --image=nginx
+   78  kubectl get pods
+   79  kubectl get pods -o wide
+   80  kubectl get pods -O wide
+   81  kubectl describe pods nginx
+   82  minikube dashbord
+   83  kubectl run nginx --images=nginx
+   84  kubectl run nginx --image=nginx
+   85  ls
+   86  rm -rvf kubectl kubectl.sha256 minikube-linux-amd64 
+   87  ls
+   88  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   89  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   90  ls
+   91  sudo update -y
+   92  sudo apt update -y
+   93  sudo apt install docker.io 
+   94  ls
+   95  minikube start
+   96  kubectl 
+   97  mini
+   98  minikube start
+   99  minikube stop
+  100  minikube start
+  101  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  102  kubectl version --client
+  103  kubectl
+  104  kubectl get nodes
+  105  sudo kubectl get nodes
+  106  kubectl get nodes
+  107  sudo kubectl get nodes
+  108  minikube start
+  109  sudo kubectl get nodes
+  110  kubectl version -o json
+  111  kubectl cluster-info
+  112  Kubernetes master is running at http://localhost:8080
+  113  sudo Kubernetes master is running at http://localhost:8080
+  114  export KUBECONFIG=/etc/kubernetes/admin.conf or $HOME/.kube/config
+  115  kubectl run nginx --image=nginx
+  116  sudo kubectl get nodes
+  117  minikube stop
+  118  minikube start
+  119  sudo systemctl start docker
+  120  sudo systemctl enable docker
+  121  minikube start
+  122  minikube start --driver=docker
+  123  docker
+  124  minikube start --driver=docker
+  125  minikube delete
+  126  minikube
+  127  ls
+  128  rm -rf minikube-linux-amd64 
+  129  minikube
+  130  which minikube
+  131  sudo dpkg -i minikube_latest_amd64.deb
+  132  sudo dpkg --purge minikube
+  133  rm -rf /usr/local/bin/minikube 
+  134  sudo rm -rf /usr/local/bin/minikube 
+  135  minikube
+  136  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  137  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+  138  minikube start
+  139  ubuntu@ip-172-31-1-25:~$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  140  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  141  kubectl version --client
+  142  sudo cat /etc/group
+  143  minikube stop
+  144  minikube start
+  145  rm -rf /usr/local/bin/minikube 
+  146  sudo rm -rf /usr/local/bin/minikube 
+  147  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+  148  minikube start
+  149  sudo  mkdir /etc/kubernetes
+  150  minikube start
+  151  ls
+  152  minikube delete --all
+  153  minikube start
+  154  ls -a
+  155  rm -rf .minikube/
+  156  minikube start
+  157  minikube delete --all
+  158  minikube start
+  159  minikube update context
+  160  minikube update-context
+  161  minikube logs --file=logs.txt
+  162  minikube start --kubeconfig=$HOME/.kube/config
+  163  minikube start --help
+  164  sudo chmod 644 /etc/kubernetes/admin.conf
+  165  sudo chmod 644 /etc/kubernetes/
+  166  minikube start 
+  167  sudo minikube start 
+  168  export KUBECONFIG=$HOME/.kube/new.conf
+  169  minikube start 
+  170  kubectl get nodes
+  171  kubectl config view
+  172  kubectl run nginx --image=nginx
+  173  kubectl get pods
+  174  kubectl get pods -o wide
+  175  kubectl describe pods nginx
+  176  minikube dashbord 
+  177  minikube dashbord --url 
+  178  kubectl describe pods nginx
+  179  ls
+  180  aws version
+  181  history 
+ubuntu@ip-172-31-1-25:~$ 
