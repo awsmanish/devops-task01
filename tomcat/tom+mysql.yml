@@ -1,0 +1,113 @@
+- name: appserver playbook
+  hosts: all
+  become: true
+  vars_files:
+  - "../env.var"
+
+
+  tasks:
+  - name: install java package 
+    package: 
+      name: java-11
+      state: present
+
+  - name: download the tomcat 
+    get_url:
+      url: "{{TOMCAT_URL}}"
+      dest: /opt/
+  - name: extract the tomcat file
+    unarchive: 
+      src: "{{TOMCAT_ZIP}}"
+      dest: /opt/
+      remote_src: true
+
+  - name: download the student.war file
+    get_url: 
+      url: "{{STUDENT_URL}}"
+      dest: "{{FILE_PATH}}/webapps"
+
+  - name: start the catalina.sh
+    shell: "nohup {{FILE_PATH}}/bin/catalina.sh start"
+
+  - name: download mysql.jar file
+    get_url:
+      url: "{{MYSQL_URL}}"
+      dest: "{{FILE_PATH}}/lib"
+
+  - name: block edd to context.xml
+    blockinfile:
+      path: /opt/apache-tomcat-9.0.80/conf/context.xml
+      marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+      insertafter: "<context>"
+      block: |
+         <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
+               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+               username="admin" password="admin123" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/studentapp"/>
+  
+- name: appserver playbook
+  hosts: all
+  become: true
+  vars_files:
+  - "../env.var"
+
+  tasks:
+  - name: Install MySQL 
+    package:
+      name: mariadb-server
+      state: present
+
+  - name: mariadb start
+    service:
+      name: mariadb  
+      state: started
+      enabled: true
+ 
+  - name: Install MySQL-python
+    yum:
+      name:
+        - python3-pip
+        - MySQL-python
+
+  - name: add mysql root password 
+    mysql_user: 
+      name: root
+      host: localhost
+      password: "{{ mysql_root_password }}"  
+      login_user: root 
+      login_password: "{{ mysql_root_password }}"
+      check_implicit_admin: yes 
+      priv: "*.*:ALL,GRANT"
+
+  - name: create a new database
+    mysql_db: 
+      name: studentapp
+      state: present 
+      login_user: root     
+      login_password: "{{ mysql_root_password }}" 
+
+  - name: add sample db 
+    copy: 
+      src: /home/ec2-user/tomcat/mysql-data.sql
+      dest: /tmp/mysql-data.sql
+
+  - name: insert sample db
+    mysql_db: 
+      name: studentapp
+      state: import 
+      target: /tmp/mysql-data.sql
+      login_user: root     
+      login_password: "{{ mysql_root_password }}"
+
+#  - name: select * from students
+#    mysql_db: 
+#      name: studentapp   
+#      state: query
+#      login_user: root     
+#      login_password: "{{ mysql_root_password }}"
+
+  - name: stop the catalina.sh
+    shell: "nohup {{FILE_PATH}}/bin/catalina.sh stop"
+
+  - name: start the catalina.sh
+    shell: "nohup {{FILE_PATH}}/bin/catalina.sh stop"

@@ -1,0 +1,22 @@
+- name: extract example
+  hosts: all
+
+  vars_files:
+  - "../env.var"
+  tasks:
+  - name: urlsplit the tomcat url  
+    debug:
+      msg: "{{'https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz' | urlsplit('path') }}"
+    register: EXTRACT_URL
+      
+  # - name: base name of  the tomcat url  
+  #   debug:
+  #     msg: "{{ EXTRACT_URL.msg | basename }}"
+  - name: basenameof  the tomcat url  
+    debug:
+      msg: "{{ 'https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz' | basename }}"
+    register: BASE_NAME
+  
+  - name: check  the tomcat url  
+    debug:
+      msg: "{{ 'https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.80/bin/apache-tomcat-9.0.80.tar.gz' | basename | regex_replace('.tar.gz','')}}"
